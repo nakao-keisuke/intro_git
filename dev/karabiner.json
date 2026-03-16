@@ -1,0 +1,53 @@
+{
+    "profiles": [
+        {
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "right_command" },
+                    "to": [{ "key_code": "right_control" }]
+                }
+            ],
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Left keys: swap Command/Control, Escape in Neovim",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "left_control" },
+                                "to": [{ "key_code": "escape" }],
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "neovim_mode",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "left_control" },
+                                "to": [{ "key_code": "left_command" }],
+                                "conditions": [
+                                    {
+                                        "type": "variable_unless",
+                                        "name": "neovim_mode",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_control" }]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
