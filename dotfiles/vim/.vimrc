@@ -15,3 +15,15 @@ nnoremap <leader>s :wq<CR>
 
 " 強制終了
 nnoremap <leader>qf :q!<CR>
+
+" 移動キーを jmik に変更
+noremap j h
+noremap m j
+noremap i k
+noremap k l
+noremap l i
+noremap h m
+
+" Insert モード関連の派生キー
+nnoremap L I
+nnoremap gl gi
