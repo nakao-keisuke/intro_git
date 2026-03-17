@@ -1,0 +1,26 @@
+---
+"workspace:activate_next_tab": cmd-l
+"pane_group:navigate_left": cmd-j
+"terminal:focus_input": none
+"editor:edit_link": none
+"pane_group:navigate_up": cmd-i
+"workspace:toggle_launch_config_palette": none
+"workspace:move_tab_left": alt-j
+"workspace:activate_prev_tab": cmd-h
+"pane_group:resize_down": ctrl-cmd-m
+"pane_group:resize_right": alt-cmd-k
+"input:set_mode_agent": cmd-p
+"workspace:move_tab_right": alt-k
+"terminal:scroll_up_one_line": cmd-i
+"pane_group:navigate_right": cmd-k
+"ai_assistant_panel:focus_terminal_input": none
+"pane_group:resize_left": alt-cmd-j
+"pane_group:navigate_down": cmd-m
+"input:set_mode_terminal": cmd-p
+"terminal:clear_blocks": none
+"workspace:show_keybinding_settings": ctrl-shift-cmd-K
+"pane_group:resize_up": ctrl-cmd-i
+"terminal:scroll_down_one_line": cmd-m
+"ai_assistant_panel:reset_context": alt-cmd-r
+"notebookview:focus_terminal_input": none
+"workspace:rename_active_tab": shift-cmd-R
