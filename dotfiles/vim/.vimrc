@@ -21,9 +21,16 @@ noremap j h
 noremap m j
 noremap i k
 noremap k l
-noremap l i
-noremap h m
+noremap ; i
+noremap h ^
+noremap l $
+noremap M m
 
 " Insert モード関連の派生キー
 nnoremap L I
 nnoremap gl gi
+
+" 行頭・行末移動の入れ替え
+nnoremap H ^
+nnoremap ^ H
+nnoremap $ ;
