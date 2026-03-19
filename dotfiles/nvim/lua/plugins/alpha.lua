@@ -17,11 +17,11 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-      dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
-      dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
-      dashboard.button("e", "  New file", ":ene <BAR> startinsert<CR>"),
-      dashboard.button("q", "  Quit", ":qa<CR>"),
+      dashboard.button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
+      dashboard.button("g", "  Live grep", "<cmd>Telescope live_grep<CR>"),
+      dashboard.button("r", "  Recent files", "<cmd>Telescope oldfiles<CR>"),
+      dashboard.button("e", "  New file", "<cmd>ene <BAR> startinsert<CR>"),
+      dashboard.button("q", "  Quit", "<cmd>qa<CR>"),
     }
 
     alpha.setup(dashboard.opts)

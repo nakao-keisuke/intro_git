@@ -1,0 +1,141 @@
+.title {
+  background: linear-gradient(to bottom, #a3a3a3, #939393);
+  color: #fff;
+  padding: 5px;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+  font-weight: bold;
+  font-size: 22px;
+  position: relative;
+  z-index: 1000;
+  position: fixed;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 6px;
+}
+.infoContainer {
+  margin-top: 13%;
+}
+.description {
+  color: #9c9c9c;
+  font-size: 12px;
+  margin: 8px;
+  padding-top: 12px;
+}
+.utage {
+  margin-top: 5%;
+}
+
+.adress {
+  margin-top: 8%;
+  font-size: 12px;
+  margin: 0 auto;
+  color: #2b3134;
+  margin: 5px 0;
+}
+.pass {
+  margin-top: 20px;
+  font-size: 12px;
+  margin: 0 auto;
+  color: #2b3134;
+  margin: 5px 0;
+}
+
+.address {
+  margin: 0 auto;
+  width: 80%;
+  flex: 1;
+  padding: 10px;
+  outline-color: #fc999f;
+  border: 1px solid #2b3134;
+}
+
+.password {
+  margin: 0 auto;
+  width: 80%;
+  flex: 1;
+  outline-color: #fc999f;
+  border: 1px solid #2b3134;
+  padding: 10px;
+}
+
+.login {
+  letter-spacing: 0.07em;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  padding: 10px 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: #fff;
+  margin-top: 6%;
+  border-radius: 30px;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#fc999f),
+    to(#44c2eb)
+  );
+  background-image: -webkit-linear-gradient(right, #fc999f 0%, #44c2eb 100%);
+  background-image: linear-gradient(to left, #fc999f 0%, #44c2eb 100%);
+}
+
+.signup {
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.07em;
+  padding: 10px 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: #202020;
+  margin-top: 5%;
+  background-color: #fff;
+  border-bottom: 5px solid #fc999f;
+  border-image: linear-gradient(to left, #fc999f 0%, #44c2eb 100%);
+  border-image-slice: 1;
+}
+
+.sign {
+  letter-spacing: 0.07em;
+  color: #202020;
+  margin-top: 7%;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  border-bottom: solid 2px #9badc5;
+  padding: 7px;
+  min-width: 90px;
+  max-width: 100%;
+  text-align: center;
+}
+.sign:before,
+.sign:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.sign:before {
+  border: solid 12px transparent;
+  border-top: solid 12px #9badc5;
+}
+.sign:after {
+  border: solid 14px transparent;
+  border-top: solid 14px #fff;
+  margin-top: -5px;
+}
+.sign p {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,410 @@
+/* Mercari-style Transaction List */
+
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 60px;
+}
+
+.pageWrap {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 60px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  padding: 0 16px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.backButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 20px;
+  margin-left: -8px;
+}
+
+.backButton:hover {
+  background-color: #f5f5f5;
+  border-radius: 50%;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+  margin-right: 0;
+}
+
+.todoButton {
+  position: relative;
+  min-width: 72px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.todoButtonLabel {
+  line-height: 1;
+}
+
+.todoBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tabs */
+.tabsSection {
+  background: #fff;
+  padding: 0 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+}
+
+.tab {
+  position: relative;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.tab.active {
+  color: #333;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ef4444;
+}
+
+.tabBadge {
+  position: absolute;
+  top: 4px;
+  right: -10px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transaction List */
+.transactionsList {
+  padding: 8px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.transactionItem {
+  background: #fff;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  position: relative;
+  border-bottom: 1px solid #a2a1a136;
+}
+
+.transactionItem:hover {
+  background-color: #fafafa;
+}
+
+.transactionItem:active {
+  background-color: #f5f5f5;
+}
+
+/* Transaction Content */
+.transactionContent {
+  display: flex;
+  gap: 12px;
+}
+
+.productImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #f5f5f5;
+  flex-shrink: 0;
+}
+
+.productImagePlaceholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #ccc;
+}
+
+.transactionDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.productTitle {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.transactionMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.transactionStatus {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: #f5f5f5;
+  color: #666;
+}
+
+.transactionStatus.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.transactionStatus.shipping {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.transactionStatus.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.transactionStatus.cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.transactionDate {
+  font-size: 12px;
+  color: #999;
+}
+
+.transactionPrice {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 4px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.transactionActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actionButton {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background: #f5f5f5;
+}
+
+.actionButton.primary {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.actionButton.primary:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+/* Empty State */
+.emptyState {
+  padding: 60px 16px;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  color: #ddd;
+  margin-bottom: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.emptyDescription {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.startShoppingButton {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.startShoppingButton:hover {
+  background: #dc2626;
+}
+
+/* Error State */
+.errorMessage {
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.errorMessage p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.retryButton {
+  padding: 8px 24px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Loading State */
+.loadingContainer {
+  padding: 40px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.loadingState {
+  padding: 40px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Transaction Badge */
+.transactionBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: 48px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .transactionItem {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,325 @@
+.componentWrapper {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.container {
+  position: relative;
+  background-color: #ffffff;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  list-style-position: inside;
+  padding-inline-start: 3px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.cell {
+  box-sizing: border-box;
+  margin: 0 0.3%;
+  position: relative;
+}
+
+@keyframes anime1 {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.beginnerIcon span {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  bottom: 25px;
+  left: 3px;
+  animation: zoomFade 2s ease-in-out infinite;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.twoshot {
+  border-radius: 30px;
+  padding: 6px 3px;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 10px;
+  font-weight: bold;
+  animation: 2s fuwafuwa infinite;
+  color: #fff;
+  background: linear-gradient(to top, #db3d3d, #f46262 40%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 1px 3px rgba(79, 79, 79, 0.407);
+}
+
+.noTwoshot {
+  border-radius: 30px;
+  padding: 6px 3px;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 10px;
+  font-weight: bold;
+  animation: 2s fuwafuwa infinite;
+  color: #fff;
+  background: linear-gradient(to top, #848484, #9b9b9b 40%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 1px 3px rgba(79, 79, 79, 0.407);
+}
+
+.mark {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.thumbnail {
+  z-index: 5;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  width: 95px;
+  height: 95px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.waitingIcon {
+  margin-top: 3%;
+  margin-left: 90%;
+  line-height: 0.3em;
+  position: absolute;
+  z-index: 100;
+}
+
+.label img {
+  margin-right: 5px;
+}
+
+.containerFixedHeight {
+  height: 90px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+
+.none {
+  width: 100%;
+  font-size: 12px;
+  display: flex;
+  background-color: #fff;
+  color: rgb(154, 154, 154);
+  text-align: center;
+  min-height: 90px;
+  height: 90px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #a3a3a3f5;
+  border-top-color: transparent;
+  animation: rot1 1.2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  width: 25px;
+  height: 25px;
+}
+
+@keyframes rot1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.userStatus {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  bottom: 0;
+  margin-left: 6%;
+  text-align: center;
+}
+
+.username {
+  color: #2b2b2b;
+  font-size: 11px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  z-index: 10;
+  width: 99%;
+}
+
+.call {
+  font-size: 11px;
+  text-align: center;
+  z-index: 13;
+  font-weight: bold;
+  color: rgb(58, 210, 58);
+}
+
+.age {
+  margin-right: 1px;
+  font-size: 11px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.region {
+  margin-right: 1px;
+  font-size: 11px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.sai {
+  font-size: 9px;
+  margin-right: 3px;
+  font-weight: bold;
+  z-index: 13;
+}
+
+.status-green {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(105, 243, 105);
+  border-radius: 50%;
+}
+
+.status-orange {
+  width: 8px;
+  height: 8px;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.status-grey {
+  width: 8px;
+  height: 8px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.lovense {
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  animation: zoomFade 2s ease-in-out infinite;
+}
+
+/* 横スクロール可能なことを知らせる吹き出し */
+.swipeHintBubble {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 10102;
+  animation: swipeHintFadeOut 0.3s ease-in-out 3s forwards;
+}
+
+.swipeHintBubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #333;
+}
+
+/* 横スクロール可能なことを知らせるアニメーション */
+.swipeArrowIcon {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  animation:
+    slideLeftRelative 1.3s ease-in-out 2,
+    swipeHintFadeOut 0.3s ease-in-out 3s forwards;
+  pointer-events: none;
+  z-index: 10101;
+}
+
+@keyframes slideLeftRelative {
+  0% {
+    right: 30px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    right: 150px;
+    opacity: 0;
+  }
+}
+
+@keyframes swipeHintFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

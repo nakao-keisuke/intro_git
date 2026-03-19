@@ -1,0 +1,209 @@
+.pay {
+  z-index: 1001;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 13%;
+  margin-left: 53%;
+  font-size: 9px;
+  text-align: center;
+  animation: 3s fuwafuwa infinite;
+  text-shadow:
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff;
+  color: #fe9f4c;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 6px #515151c8);
+}
+@keyframes fuwafuwa {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 通常時の状態のスタイル */
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* 固定高さ（小さい端末での溢れを防ぐ）。
+     iOSのセーフエリア分はheightとpaddingで加味 */
+  --bottom-nav-base-height: 60px;
+  height: calc(
+    var(--bottom-nav-base-height) +
+    env(safe-area-inset-bottom, 0px) +
+    var(--pwa-extra-bottom, 0px)
+  );
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 1000;
+  margin-bottom: -1px;
+  margin-top: 0;
+  background: #ffffff;
+}
+
+/* containerの下に背景を延長するための疑似要素 */
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: rgba(224, 224, 224, 0.953);
+  z-index: -1;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280; /* gray-500 */
+  text-decoration: none;
+  font-size: 10px;
+  flex-grow: 1;
+  height: 100%;
+  flex-basis: 25%;
+  text-align: center;
+  background: transparent;
+  border-top: 1px solid #bfbfbf89;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.item:not(:last-child) {
+  /* border-right: 1px solid rgba(114, 114, 114, 0.3); */
+}
+
+.main-content {
+  flex-grow: 1;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* iOS用 */
+}
+
+/* アイテム内の縦整列とサイズ調整（固定高さに収める） */
+.itemInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* PWA時: アイコン群を上からの固定pxで配置 */
+.pwa .itemInner {
+  justify-content: flex-start;
+  padding-top: var(--nav-icon-top, 10px);
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.icon {
+  display: block;
+}
+
+.label {
+  text-align: center;
+  width: 100%;
+  line-height: 1.1;
+  font-size: 11px;
+}
+
+.unreadCount {
+  position: absolute;
+  top: -4px;
+  right: -20px;
+  z-index: 1001;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9999px;
+
+  font-size: 11px;
+  line-height: 1;
+  color: #fff;
+  background-color: rgb(236, 59, 59);
+  text-align: center;
+}
+
+.badge {
+  color: rgb(236, 59, 59);
+  top: 0;
+  right: -8px;
+  position: absolute;
+  font-size: 1.3em;
+  padding: 1%;
+}
+
+.saleBadge {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  z-index: 1001;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px 4px;
+  border-radius: 4px;
+
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  background-color: rgb(236, 59, 59);
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.active {
+  color: #42bfec;
+  font-weight: bold;
+}
+
+/* 小さい画面（例: iPhone SE）向けの微調整 */
+@media (max-width: 360px) {
+  .container {
+    --bottom-nav-base-height: 54px;
+  }
+  .label {
+    font-size: 9px;
+  }
+}

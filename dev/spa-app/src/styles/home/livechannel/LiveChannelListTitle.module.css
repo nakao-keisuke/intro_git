@@ -1,0 +1,120 @@
+.content {
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.title {
+  color: #424242;
+  padding: 2px;
+  margin-top: 0%;
+  margin-bottom: 0;
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.count {
+  color: #424242;
+  margin: 0 10px;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 100px;
+  padding: 2px 10px;
+}
+
+.all {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 8px;
+  font-size: 12px;
+  height: 28px;
+  white-space: nowrap;
+  align-items: center;
+  background: linear-gradient(#ffffff, #f5f5f5 90%);
+  color: #757577;
+  border: #7676765a 1px solid;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.countNumber {
+  font-weight: bold;
+  color: #f95757;
+  font-size: 15px;
+}
+
+.button {
+  width: 100px;
+  height: 22px;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #ff5871a1;
+  color: #ff5871;
+  font-size: 11px;
+  line-height: 24px;
+  border-radius: 16px;
+  margin-left: auto;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 1.5s toggleFade infinite;
+  animation-delay: 1s;
+  background: linear-gradient(#ffffff, #f5f5f5dc 90%);
+}
+
+.right {
+  display: flex;
+}
+
+.search {
+  background: linear-gradient(#ffffff, #f5f5f5 90%);
+  border-radius: 4px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 0.8em;
+  color: #757577;
+  border: #7676765a 1px solid;
+  margin-right: 10px;
+}
+
+.reload {
+  background: linear-gradient(#ffffff, #f5f5f5 90%);
+  border-radius: 4px;
+  height: 30px;
+  width: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 0.8em;
+  color: #757577;
+  border: #7676765a 1px solid;
+  margin-right: 10px;
+}
+
+.all {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 8px;
+  font-size: 12px;
+  height: 28px;
+  white-space: nowrap;
+  align-items: center;
+  background: linear-gradient(#ffffff, #f5f5f5 90%);
+  color: #757577;
+  border: #7676765a 1px solid;
+  border-radius: 4px;
+  margin-right: 5px;
+}

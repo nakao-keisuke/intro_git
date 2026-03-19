@@ -1,0 +1,423 @@
+.container {
+  position: relative;
+  margin-top: 50px;
+}
+
+/* ヒーローセクション */
+.heroSection {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b6b, #ffa500);
+  padding: 12px 24px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.heroBadge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.badgeText {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* CTAセクション */
+.ctaSection {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.ctaDescription {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.signupLink {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.signupLink:hover {
+  transform: scale(1.05);
+}
+
+/* 既存のスタイル */
+.about_container {
+  flex-direction: column;
+  padding: 30px 16px;
+  background-color: #ccf2f2;
+  position: relative;
+}
+
+.title_container {
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #5e5e5e;
+}
+
+.subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0099cc;
+}
+
+.content {
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 29px;
+}
+
+.content_title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 154, 139, 1) 0%,
+    rgba(255, 106, 136, 1) 50%,
+    rgba(255, 153, 172, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content_text {
+  font-size: 12px;
+  color: #000;
+  line-height: 25px;
+}
+
+.howto_container {
+  flex-direction: column;
+  padding: 48px 16px;
+  background-color: #ffe5ee;
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.slide {
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.stepContent {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.stepContent:hover {
+  box-shadow: 0 5px 15px rgba(255, 115, 156, 0.2);
+}
+
+.stepLabel {
+  background: #e65580;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.imageWrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stepImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.stepDescription {
+  text-align: left;
+  margin-top: 16px;
+}
+
+.stepDescription h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.stepDescription p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.search_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.search_button_text {
+  background: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 50%, #ff99ac 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.search_button_text:hover {
+  transform: translateY(-2px);
+}
+
+.signupBtn {
+  animation: 1.2s poyopoyo infinite;
+}
+
+@keyframes poyopoyo {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Slick slider custom styles */
+.slider :global(.slick-dots li button:before) {
+  font-size: 12px;
+  color: #ff739c;
+  opacity: 0.25;
+}
+
+.slider :global(.slick-dots li.slick-active button:before) {
+  opacity: 1;
+  color: #ff739c;
+}
+
+.slider :global(.slick-prev),
+.slider :global(.slick-next) {
+  z-index: 1;
+  height: 30px;
+}
+
+.slider :global(.slick-prev:before),
+.slider :global(.slick-next:before) {
+  font-size: 30px;
+  color: #ff739c;
+  opacity: 0.8;
+}
+
+/* フッター */
+.footer {
+  margin-top: 10px;
+}
+.signupBtn {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 60px 16px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .heroBadge {
+    padding: 10px 20px;
+  }
+
+  .badgeText {
+    font-size: 1rem;
+  }
+
+  .ctaSection {
+    padding: 60px 16px;
+  }
+
+  .ctaTitle {
+    font-size: 1.875rem;
+  }
+
+  .ctaDescription {
+    font-size: 1rem;
+  }
+
+  .slider {
+    max-width: 100%;
+    padding: 10px 0;
+  }
+
+  .stepContent {
+    padding: 10px;
+    height: 480px;
+  }
+
+  .stepDescription h4 {
+    font-size: 16px;
+  }
+
+  .stepDescription p {
+    font-size: 12px;
+  }
+
+  .search_button_text {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .slider :global(.slick-prev) {
+    left: -7px;
+  }
+
+  .slider :global(.slick-next) {
+    right: 0;
+  }
+}
+
+@media (min-width: 950px) {
+  .slider {
+    max-width: 60%;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content_title {
+    text-align: center;
+  }
+
+  .content_text {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    display: block;
+  }
+
+  .title_container {
+    text-align: center;
+  }
+
+  .stepDescription {
+    text-align: center;
+  }
+
+  .stepDescription h4 {
+    text-align: center;
+  }
+
+  .stepDescription p {
+    text-align: center;
+  }
+}

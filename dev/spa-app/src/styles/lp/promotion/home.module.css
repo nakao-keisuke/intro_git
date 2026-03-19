@@ -1,0 +1,195 @@
+.container {
+  width: 100%;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  overflow: visible;
+  padding-top: 40px;
+}
+
+.mainImage {
+  display: block;
+  z-index: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.ImageWrapper {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  aspect-ratio: 320 / 480;
+}
+
+.logo {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.logoPic {
+  width: 100px;
+  height: auto;
+}
+
+.title {
+  width: 100%;
+  margin-top: 20px;
+  animation: zoomFade 1.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.subtitlePic {
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 5px;
+  width: 70%;
+  height: auto;
+}
+
+.titlePic {
+  margin: 0 auto;
+  display: flex;
+}
+
+.mainVisualWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.mobileImageContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.pcImageContainer {
+  display: none;
+}
+
+.mainImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.buttonWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.loginButton,
+.signupButton {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 14px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.signupButton {
+  background: -webkit-linear-gradient(-170deg, #9648e1, #ff00af);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 6px rgba(232, 121, 166, 0.2);
+}
+
+.loginButton {
+  background: #ffffff;
+  color: #ff00af;
+  border: 2px solid #ff00af;
+  box-shadow: 0 4px 6px rgba(232, 121, 166, 0.1);
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileImageContainer {
+    display: none;
+  }
+
+  .pcImageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    background: #f4f4f4;
+    min-height: 600px;
+  }
+
+  .imageColumn {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+
+  .imageColumn .mainImage,
+  .imageColumn .sideImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .imageColumn:nth-child(2) {
+    position: relative;
+  }
+
+  .pcImageContainer .buttonWrapper {
+    position: absolute;
+    bottom: 150px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 350px;
+    padding: 0 20px;
+    gap: 15px;
+  }
+
+  .pcImageContainer .signupButton,
+  .pcImageContainer .loginButton {
+    max-width: none;
+    padding: 20px 50px;
+    font-size: 24px;
+  }
+}

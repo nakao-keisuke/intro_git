@@ -1,0 +1,592 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 0;
+  overflow: visible;
+  background-color: #fb295d42;
+}
+
+.about_container {
+  flex-direction: column;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.title_container {
+  margin-bottom: 5px;
+  padding: 0px 16px;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1fcdfd;
+}
+
+.backgroundPic {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.aboutTitlePic {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+}
+
+.pickGirlsTxt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-10px);
+}
+
+.emphasisText {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgb(100, 80, 255) 0%,
+    rgb(208, 39, 255) 50%,
+    rgb(100, 80, 255) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 吹き出し*/
+.recommendBalloon {
+  position: relative;
+  background: #fff0f6;
+  color: #d72660;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 18px 32px;
+  border-radius: 20px;
+  margin: 60px auto 0 auto;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(215, 38, 96, 0.08);
+  z-index: 1;
+}
+.recommendBalloon::before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 40px;
+  border-width: 18px 16px 0 16px;
+  border-style: solid;
+  border-color: #fff0f6 transparent transparent transparent;
+  z-index: 1;
+}
+/* 吹き出し*/
+
+/* チェックボックス付きの枠*/
+.recommendTextBox {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 30px 24px;
+  margin: 0px 10px 30px 10px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+/* チェックボックス付きの枠*/
+
+.recommendList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendList li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.checkIcon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+/* チェックボックス付きの枠*/
+
+/* 女性アイコンのスクロール*/
+.girlsLineWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+}
+
+.girlsLineInner {
+  display: flex;
+  width: 200%;
+  animation: girlsLineScroll 16s linear infinite;
+}
+
+@keyframes girlsLineScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* 女性アイコンのスクロール*/
+
+.content {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 29px;
+  position: relative;
+}
+
+.content_title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0px 16px;
+  margin-bottom: 15px;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgb(255, 118, 94) 0%,
+    rgb(255, 66, 104) 50%,
+    rgb(255, 17, 65) 100%
+    /* rgba(255, 154, 139, 1) 0%,
+    rgba(255, 106, 136, 1) 50%,
+    rgba(255, 153, 172, 1) 100% */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 3px white) drop-shadow(0 0 5px white);
+}
+
+.content_text {
+  font-size: 12px;
+  color: #000000;
+  line-height: 25px;
+  padding: 0px 16px;
+  z-index: 1;
+}
+
+.howto_container {
+  flex-direction: column;
+  padding: 48px 16px;
+  background-color: #fff1f7;
+  position: relative;
+}
+
+.carousel_wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselContent {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  width: 300%;
+}
+
+.carouselItem {
+  flex: 0 0 31.5%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.stepContent {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stepLabel {
+  background: #ff739c;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.videoContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.videoWrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.stepImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.stepImage:hover {
+  transform: scale(1.05);
+}
+
+.stepDescription {
+  text-align: left;
+}
+
+.stepDescription h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+  margin-top: 0;
+}
+
+.stepDescription p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.carouselButton {
+  background: #ff739c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+  font-size: 10px;
+}
+
+.search_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search_button_text {
+  background: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 50%, #ff99ac 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.search_button_text:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .carouselItem {
+    padding: 0 8px;
+  }
+
+  .stepContent {
+    padding: 16px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .stepDescription h4 {
+    font-size: 16px;
+  }
+
+  .stepDescription p {
+    font-size: 12px;
+  }
+}
+
+.slider {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slide {
+  padding: 10px;
+  outline: none;
+}
+
+.slider :global(.slick-dots) {
+  bottom: -40px;
+}
+
+.slider :global(.slick-dots li button:before) {
+  font-size: 12px;
+  color: #ff739c;
+  opacity: 0.25;
+}
+
+.slider :global(.slick-dots li.slick-active button:before) {
+  opacity: 1;
+  color: #ff739c;
+}
+
+.slider :global(.slick-prev),
+.slider :global(.slick-next) {
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+
+.slider :global(.slick-prev:before),
+.slider :global(.slick-next:before) {
+  font-size: 30px;
+  color: #ff739c;
+}
+
+.stepContent {
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.stepContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 115, 156, 0.2);
+}
+
+.videoCarousel {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoWrapper {
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.videoContent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoCarouselTrack {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  width: 300%;
+}
+
+.videoCarouselItem {
+  flex: 0 0 33.333%;
+  height: 100%;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoCarouselButton {
+  background: rgba(255, 115, 156, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.videoCarouselButton:first-child {
+  left: 5px;
+}
+
+.videoCarouselButton:last-child {
+  right: 5px;
+}
+
+@media (max-width: 768px) {
+  .videoCarousel {
+    max-width: 100%;
+  }
+
+  .videoWrapper {
+    width: 80%;
+  }
+
+  .videoCarouselButton {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .videoCarouselItem {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel_wrapper {
+    overflow: visible;
+  }
+
+  .carouselContent {
+    overflow: visible;
+  }
+
+  .carouselTrack {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    transform: none;
+  }
+
+  .carouselItem {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .carouselButton {
+    display: none;
+  }
+
+  .content_title {
+    text-align: center;
+  }
+
+  .content_text {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    display: block;
+  }
+
+  .title_container {
+    text-align: center;
+  }
+
+  .stepDescription {
+    text-align: center;
+  }
+
+  .stepDescription h4 {
+    text-align: center;
+  }
+
+  .stepDescription p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .videoCarousel {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .videoCarouselTrack {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    transform: none;
+  }
+
+  .videoCarouselItem {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .videoCarouselButton {
+    display: none;
+  }
+
+  .videoWrapper {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}

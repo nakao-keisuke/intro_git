@@ -1,0 +1,40 @@
+import type { ActiveTime } from '@/utils/activeTime';
+import type { Alcohol } from '@/utils/alcohol';
+import type { BloodType } from '@/utils/bloodType';
+import type { BodyType } from '@/utils/bodyType';
+import type { Hobby } from '@/utils/hobby';
+import type { Holiday } from '@/utils/holiday';
+import type { Housemate } from '@/utils/housemate';
+import type { Occupation } from '@/utils/occupation';
+import type { Personality } from '@/utils/personality';
+import type { PreferredLooks } from '@/utils/preferredLooks';
+import type { Region } from '@/utils/region';
+import type { Smoking } from '@/utils/smoking';
+import type { TalkTheme } from '@/utils/talkTheme';
+
+export type UpdateUserInfo = {
+  readonly userName: string;
+  readonly avatarId: string;
+  readonly age: number;
+  readonly userId: string;
+  readonly region: Region;
+  readonly about: string;
+  readonly talktheme: TalkTheme;
+  readonly inters: Hobby;
+  readonly personality: Personality;
+  readonly bodyType: BodyType;
+  readonly isAboutBonusAvailable: boolean;
+  readonly isAvatarBonusAvailable: boolean;
+  readonly isAgeBonusAvailable: boolean;
+  readonly isBodytypeBonusAvailable: boolean;
+  readonly isHobbyBonusAvailable: boolean;
+  // 新規追加フィールド（必須）
+  readonly activeTime: ActiveTime;
+  readonly occupation: Occupation;
+  readonly preferredLooks: PreferredLooks;
+  readonly holiday: Holiday;
+  readonly housemate: Housemate;
+  readonly bloodType: BloodType;
+  readonly alcohol: Alcohol;
+  readonly smoking: Smoking;
+};

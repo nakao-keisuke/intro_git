@@ -1,0 +1,172 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(67, 67, 67, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2000;
+}
+
+.modal {
+  background-image: -webkit-linear-gradient(45deg, #fc999f 0%, #44c2eb 100%);
+  background-image: linear-gradient(45deg, #f9c7cb 0%, #a4dbed 100%);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2001;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  color: #484848;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.message {
+  text-align: center;
+  color: #484848;
+  font-size: 1.1em;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.partner {
+  display: flex;
+  flex-direction: column; /* 子要素を縦に並べる */
+  justify-content: center; /* 縦方向（列）の中央に揃える */
+  align-items: center; /* 横方向の中央に揃える */
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #ffffffa0;
+  padding: 20px 5px 10px 5px;
+  border-radius: 40px;
+  width: 80%;
+}
+
+.thumbnail {
+  position: relative;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  filter: drop-shadow(0 0 2px #2828284c);
+  justify-content: center;
+  text-align: center;
+}
+
+.name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #2b3134;
+  margin-bottom: 10px;
+}
+
+.bookmark_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookmark {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ffffff;
+  border-radius: 100vh;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.bookmark_text {
+  color: #534747;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.btn_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 1em;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 100vh;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #464646c0;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.357);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.chat {
+  composes: btn;
+  background: #fcc107;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.purchase {
+  composes: btn;
+  background: #f95757;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat > div,
+.purchase > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chat img,
+.purchase img {
+  display: block;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

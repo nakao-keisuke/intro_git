@@ -1,0 +1,320 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-size: 12px;
+  line-height: 1.1em;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 5px;
+  border-radius: 17px;
+  position: relative;
+  width: 90%;
+  height: 85%;
+  margin-bottom: 12%;
+  max-width: 600px;
+  animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.title {
+  z-index: 2;
+  position: relative;
+  top: 6%;
+  color: #000000;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff,
+    0 0 3px #fff;
+  line-height: 1.5em;
+  margin-left: 5%;
+  font-size: 15px;
+}
+
+.first {
+  position: relative;
+  z-index: 2;
+  top: 30%;
+  color: #fff;
+  font-weight: bold;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 20px #fff,
+    0 0 10px #12c5e0,
+    0 0 8px #12c5e0,
+    0 0 10px #12c5e0,
+    0 0 13px #12c5e0,
+    0 0 17px #12c5e0;
+  line-height: 1.5em;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+}
+
+.firstp {
+  font-size: 19px;
+}
+
+.ten {
+  margin-top: -20vw;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.fivetx {
+  top: 43%;
+  position: relative;
+  color: #393939;
+  padding: 5px;
+  line-height: 1.4em;
+  text-align: center;
+}
+
+.nami {
+  text-decoration: underline 2px wavy #f5b6cb94;
+}
+
+.line {
+  background: linear-gradient(transparent 40%, #f5b6cb94 50%);
+}
+
+.five {
+  top: 43%;
+  position: relative;
+}
+
+.videoo {
+  top: 45%;
+  position: relative;
+  background-color: #fff4f7;
+}
+
+.livee {
+  top: 45%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.nopayy {
+  top: 45%;
+  position: relative;
+}
+
+.video {
+  padding: 10px;
+  font-weight: bold;
+  background: #ff739c;
+  background: linear-gradient(
+    90deg,
+    rgb(248, 182, 201) 0,
+    rgb(255, 106, 171) 50%,
+    rgb(226, 130, 173) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 18px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.live {
+  padding: 10px;
+  font-weight: bold;
+  background: rgb(106, 181, 255);
+  background: linear-gradient(
+    90deg,
+    rgb(139, 222, 255) 0,
+    rgb(106, 181, 255) 50%,
+    rgb(153, 224, 255) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 18px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.nopay {
+  padding: 10px;
+  font-weight: bold;
+  background: #94ff73;
+  background: linear-gradient(
+    90deg,
+    rgb(174, 255, 165) 0,
+    rgb(71, 255, 50) 50%,
+    rgb(93, 224, 97) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 18px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.supportt {
+  top: 45%;
+  position: relative;
+  background-color: #f4fcff;
+}
+
+.support {
+  display: flex;
+  padding: 5px;
+  color: #3f3646;
+}
+
+.supportp {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.1em;
+  color: #3f3646;
+}
+
+.qa {
+  margin: 16px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  line-height: 20px;
+  height: calc(100% - 32px);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.qaa {
+  display: block;
+  overflow-x: scroll;
+}
+
+.p {
+  color: #3f3646;
+  font-size: 15px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+.pink {
+  color: #f14a82;
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+.sp {
+  color: #3f3646;
+  font-size: 12px;
+}
+
+.title span {
+  font-size: 30px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-top: -5px;
+  padding-left: 8px;
+  color: #fff;
+}
+
+.yaritori {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7px;
+}
+
+.back,
+.next {
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  cursor: pointer; /* ホバー時にカーソルが変わるようにする */
+  z-index: 10; /* 他の要素の上に表示するためのz-index */
+  color: rgba(0, 0, 0, 0.532);
+}
+
+.back {
+  left: 5px; /* 左側に配置 */
+}
+
+.next {
+  right: 5px; /* 右側に配置 */
+}
+
+.close {
+  display: flex;
+  position: fixed;
+  top: 3%;
+  right: -10px;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: #2e2e2e;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.281);
+  border-radius: 50%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.3s;
+  z-index: 10000;
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.attention {
+  font-size: 10px;
+}

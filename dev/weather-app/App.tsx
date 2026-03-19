@@ -11,6 +11,7 @@ import CurrentWeatherCard from "./src/components/CurrentWeatherCard";
 import HourlyChart from "./src/components/HourlyChart";
 import WeeklyForecast from "./src/components/WeeklyForecast";
 import HumidityWindChart from "./src/components/HumidityWindChart";
+import SummerNoteEditor from "./src/components/SummerNoteEditor";
 
 export default function App() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -73,6 +74,7 @@ export default function App() {
               <Text style={styles.headerTitle}>Weather</Text>
               <Text style={styles.headerTime}>{timeString}</Text>
             </View>
+            <SummerNoteEditor />
             <CurrentWeatherCard current={weather.current} locationName={weather.locationName} />
             <HourlyChart hourlyData={weather.hourly} />
             <WeeklyForecast dailyData={weather.daily} />

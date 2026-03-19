@@ -9,7 +9,23 @@
       "Bash(xargs kill:*)",
       "Bash(npx create-expo-app@latest weather-app --template blank-typescript@sdk-52)",
       "Bash(rm -rf /Users/nakaokeisuke/git/intro_git/dev/weather-app)",
-      "Bash(npx create-expo-app@latest weather-app --template blank-typescript@sdk-54)"
+      "Bash(npx create-expo-app@latest weather-app --template blank-typescript@sdk-54)",
+      "Bash(find /Users/nakaokeisuke/git/intro_git/dev/weather-app/src -type f -name *.ts -o -name *.tsx)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(ls -la /Users/nakaokeisuke/git/Utage/src/app/[locale]/\\\\\\(tab-layout\\\\\\)/)",
+      "Bash(find /Users/nakaokeisuke/git/Utage/src/app/[locale]/message -name \"*.tsx\")",
+      "Bash(find:*)",
+      "Bash(find /Users/nakaokeisuke/git/Utage/src/app/[locale]/\\\\\\(tab-layout\\\\\\)/girls -name \"*.tsx\")",
+      "Bash(wc -l /Users/nakaokeisuke/git/Utage/src/components/**/*.tsx)",
+      "Bash(/tmp/components_inventory.txt:*)",
+      "Read(//tmp/**)",
+      "Bash(cd:*)",
+      "Bash(bun add:*)",
+      "Bash(bun run:*)",
+      "Bash(kill %1)",
+      "Bash(kill %2)",
+      "Bash(curl -s http://localhost:3000/)"
     ]
   }
 }

@@ -1,0 +1,692 @@
+@import "react-toastify/dist/ReactToastify.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Meiryo", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ズーム無効化（ダブルタップズーム防止） */
+/* iOS/Androidのテキスト選択・コンテキストメニュー無効化 */
+html,
+body {
+  touch-action: manipulation;
+  overscroll-behavior-y: contain;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* フォーム要素はテキスト選択を許可 */
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* カスタムアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+@layer utilities {
+  .header-transition {
+    @apply transition-all duration-300 ease-out will-change-transform;
+  }
+}
+
+/* Gentle float animation for beginner mark */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Online indicator */
+@keyframes online-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  18% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-online-ping {
+  animation: online-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Modal popup animation */
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-popup {
+  animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* FleaMarketModal popup animation */
+@keyframes flea-market-popup {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-flea-market-popup {
+  animation: flea-market-popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes flea-market-swap {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-flea-market-swap {
+  animation: flea-market-swap 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes quit-modal-popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-quit-modal {
+  animation: quit-modal-popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Slide-up animation */
+@keyframes slide-up {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Modal popup animation for LovenseHowToModal */
+@keyframes modal-popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-modal-popup {
+  animation: modal-popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Glitter text animation */
+@keyframes glitter {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow:
+      0 0 1px #ffffffaf,
+      0 0 5px #ffffffaf,
+      0 0 10px #ffffffaf,
+      0 0 15px #ffffffaf;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+.animate-glitter {
+  animation: glitter 2s infinite;
+}
+
+/* BonusCourseItem */
+.bonus-course-selected {
+  border: 3px solid #0ea5e9;
+  position: relative;
+}
+
+.bonus-course-selected::before {
+  content: "✓";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 24px;
+  height: 24px;
+  background-color: #0ea5e9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bonus-limited-badge {
+  background: linear-gradient(
+    45deg,
+    #b67b03 0%,
+    #daaf08 45%,
+    #fee9a0 70%,
+    #daaf08 85%,
+    #b67b03 90% 100%
+  );
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 3px rgb(255, 255, 255);
+  color: #373737;
+}
+
+@keyframes gallery-popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes gallery-fuwafuwa {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes guest-float {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-15px);
+  }
+}
+
+@keyframes ranking-fuwafuwa {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-popular-badge {
+  animation: moveUpDown 2s infinite;
+}
+
+.popular-ribbon {
+  position: absolute;
+  isolation: isolate;
+}
+
+/* Toast notification styles */
+.Toastify__toast {
+  border-radius: 1rem !important;
+}
+
+.toast-custom {
+  touch-action: none;
+  contain: layout style;
+  will-change: transform, opacity;
+  border-radius: 1rem !important;
+}
+
+.prevent-pull-to-refresh {
+  overscroll-behavior-y: contain;
+}
+
+.toast-custom .Toastify__toast-body {
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.toast-custom .Toastify__toast-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
+  flex-shrink: 0;
+}
+
+.point-shortage-toast {
+  border-radius: 24px !important;
+  background: rgba(20, 20, 20, 0.92) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.point-shortage-toast-body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.point-shortage-toast-message {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.point-shortage-highlight {
+  border-radius: 6px;
+  padding: 2px 6px;
+  background-color: #fde047;
+  color: #1f2937;
+  box-shadow: 0 0 16px rgba(253, 224, 71, 1);
+  animation: point-shortage-glow 3s ease-out 1 forwards;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.point-shortage-highlight:hover {
+  background-color: #fde047;
+  color: #1f2937;
+  box-shadow: 0 0 20px rgba(253, 224, 71, 1);
+}
+
+@keyframes point-shortage-glow {
+  0%,
+  15% {
+    background-color: #fde047;
+    color: #1f2937;
+    box-shadow: 0 0 20px rgba(253, 224, 71, 1);
+    transform: scale(1.05);
+  }
+  30% {
+    background-color: #fde047;
+    color: #1f2937;
+    box-shadow: 0 0 16px rgba(253, 224, 71, 0.9);
+    transform: scale(1);
+  }
+  70% {
+    background-color: rgba(253, 224, 71, 0.6);
+    color: #1f2937;
+    box-shadow: 0 0 10px rgba(253, 224, 71, 0.6);
+    transform: scale(1);
+  }
+  100% {
+    background-color: rgba(253, 224, 71, 0.3);
+    color: #1f2937;
+    box-shadow: 0 0 6px rgba(253, 224, 71, 0.3);
+    transform: scale(1);
+  }
+}
+
+/* Toast animations */
+.animate-toast-slide-in-right {
+  animation: toast-slide-in-right 0.3s ease-out forwards;
+}
+
+.animate-toast-slide-out-right {
+  animation: toast-slide-out-right 0.25s ease-in forwards;
+}
+
+@keyframes toast-slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-slide-out-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+
+/* 通話中のヘッダー・サイドバー非表示 */
+body[data-in-call="true"] header {
+  display: none;
+}
+
+body[data-in-call="true"] #profile-sidebar-header {
+  display: none;
+}
+
+body[data-in-call="true"] #profile-content {
+  padding-top: 0;
+  margin-left: 0;
+}
+
+/* ポイントアニメーション */
+.point-container {
+  transition:
+    transform 500ms,
+    box-shadow 500ms;
+}
+.point-container.animating {
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px -3px rgba(255, 179, 0, 0.5);
+}
+
+.point-icon {
+  transition: transform 500ms;
+}
+.point-icon.animating {
+  transform: scale(1.25);
+}
+
+.point-text {
+  transition: transform 500ms;
+}
+.point-text.animating {
+  transform: scale(1.1);
+}
+
+.point-background {
+  transition:
+    transform 500ms,
+    filter 500ms;
+}
+.point-background.animating {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* ライブ配信ボタン - パルスアニメーション */
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(var(--pulse-min, 0.98));
+  }
+  50% {
+    transform: scale(var(--pulse-max, 1.03));
+  }
+}
+
+.animate-pulse-scale {
+  --pulse-min: 0.98;
+  --pulse-max: 1.03;
+  animation: pulse-scale 1.2s ease-in-out infinite;
+  transition:
+    --pulse-min 0.3s,
+    --pulse-max 0.3s;
+}
+
+.animate-pulse-scale:hover {
+  --pulse-min: 1.03;
+  --pulse-max: 1.08;
+}
+
+/* ライブ配信ボタン - 光沢エフェクト */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3.5s ease-in-out infinite;
+}
+
+/* ナビゲーションボタンのリセットスタイル */
+.nav-button-reset {
+  appearance: none;
+  border: none;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  outline: none;
+}
+
+.nav-button-reset:focus-visible {
+  outline: 2px solid #42bfec;
+  outline-offset: 2px;
+}
+
+/* 無料Lovense体験ラベルのシマーアニメーション */
+@keyframes free-lovense-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-free-lovense-label {
+  background: linear-gradient(
+    90deg,
+    #3b82f6 0%,
+    #6366f1 25%,
+    #7dd3fc 50%,
+    #6366f1 75%,
+    #3b82f6 100%
+  );
+  background-size: 200% 100%;
+  animation: free-lovense-shimmer 3s linear infinite;
+  box-shadow:
+    0 0 10px rgba(99, 102, 241, 0.5),
+    0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+/* ポイント不足時のPointCard点滅アニメーション */
+@keyframes point-shortage-blink {
+  0%,
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgba(253, 224, 71, 0.85);
+    box-shadow:
+      0 0 12px 4px rgba(253, 224, 71, 1),
+      0 0 24px 8px rgba(253, 224, 71, 0.7);
+    transform: scale(1.15);
+  }
+}
+
+.animate-point-shortage-blink {
+  animation: point-shortage-blink 0.4s ease-in-out 8;
+  border-radius: 30px;
+}
+
+.lovense-fullcontrol-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+.lovense-fullcontrol-range::-webkit-slider-runnable-track {
+  height: 20px;
+  border-radius: 999px;
+  background:
+    radial-gradient(
+      circle at calc(14px + (var(--value-percent, 0) / 100) * (100% - 28px)) 50%,
+      #ec4899 10px,
+      transparent 10px
+    ),
+    linear-gradient(
+      90deg,
+      #ec4899 0%,
+      #ec4899
+        calc(14px + (var(--value-percent, 0) / 100) * (100% - 28px) - 10px),
+      transparent
+        calc(14px + (var(--value-percent, 0) / 100) * (100% - 28px) - 10px)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(236, 72, 153, 0.35) 0px,
+      rgba(236, 72, 153, 0.35) 3px,
+      transparent 3px,
+      transparent 8px
+    );
+}
+
+.lovense-fullcontrol-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -4px;
+  height: 28px;
+  width: 28px;
+  background: #ec4899;
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+}
+
+.lovense-fullcontrol-range::-moz-range-track {
+  height: 20px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(236, 72, 153, 0.35) 0px,
+    rgba(236, 72, 153, 0.35) 3px,
+    transparent 3px,
+    transparent 8px
+  );
+}
+
+.lovense-fullcontrol-range::-moz-range-progress {
+  height: 20px;
+  background: #ec4899;
+  border-radius: 999px;
+}
+
+.lovense-fullcontrol-range::-moz-range-thumb {
+  height: 28px;
+  width: 28px;
+  background: #ec4899;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+}
+
+/* スクロールバー非表示 */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  display: none;
+}

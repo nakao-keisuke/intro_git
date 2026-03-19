@@ -1,0 +1,45 @@
+.container {
+  margin-bottom: 20px;
+}
+
+.tabList {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabItem {
+  flex: 1;
+  text-align: left;
+}
+
+.tabButton {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tabButton img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.activeTabButton {
+  color: #f944b9;
+}

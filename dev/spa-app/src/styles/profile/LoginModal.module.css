@@ -1,0 +1,347 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(55, 55, 55, 0.876);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  z-index: 2;
+  padding: 1em;
+  width: auto;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+}
+
+/* 画面の横幅が600px以下の場合 */
+@media screen and (max-width: 600px) {
+  .modal {
+    width: 300px;
+  }
+}
+
+.title {
+  font-size: 16px;
+  color: #888888;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.session {
+  border-bottom: dashed 1px #888888;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.label {
+  letter-spacing: 0.3em;
+  color: #44c2eb;
+  font-weight: bold;
+  margin-bottom: 3px;
+  margin-left: -50%;
+  font-size: 11px;
+}
+
+.address {
+  width: 60%;
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  outline-color: #fc999f;
+  border: 1px solid #2b3134;
+}
+
+.atode {
+  color: #888888;
+  font-size: 9px;
+  margin-top: 1%;
+  margin-bottom: 4%;
+}
+
+.input {
+  margin-left: 15%;
+  width: 50%;
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  outline-color: #fc999f;
+  border: 1px solid #888888;
+  text-align: center;
+}
+
+.random {
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.07em;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #fff;
+  border-radius: 30px;
+  background-color: #44c2eb;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.342);
+}
+
+.button {
+  margin-top: 8%;
+  margin-bottom: 5%;
+  letter-spacing: 0.07em;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  padding: 10px 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: #fff;
+  border-radius: 30px;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#fc999f),
+    to(#44c2eb)
+  );
+  background-image: -webkit-linear-gradient(right, #fc999f 0%, #44c2eb 100%);
+  background-image: linear-gradient(to left, #fc999f 0%, #44c2eb 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.342);
+}
+
+.mataha {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #888888;
+  font-size: 13px;
+}
+
+.mataha:before,
+.mataha:after {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background: #888888;
+  height: 1px;
+  width: 65px;
+}
+
+.mataha:before {
+  margin-right: 0.5rem;
+}
+
+.mataha:after {
+  margin-left: 0.5rem;
+}
+
+.login {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  color: #44c2eb;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.register {
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.07em;
+  padding: 10px 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: #202020;
+  margin-top: 5%;
+  background-color: #fff;
+  border-bottom: 5px solid #fc999f;
+  border-image: linear-gradient(to left, #fc999f 0%, #44c2eb 100%);
+  border-image-slice: 1;
+}
+.img {
+  margin-top: -1.5em; /* 画像を上に移動 */
+}
+
+.sign {
+  letter-spacing: 0.07em;
+  color: #202020;
+  margin-top: 14%;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  border-bottom: solid 2px #9badc5;
+  padding: 2px;
+  min-width: 130px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+.sign:before,
+.sign:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.sign:before {
+  border: solid 12px transparent;
+  border-top: solid 12px #9badc5;
+}
+.sign:after {
+  border: solid 14px transparent;
+  border-top: solid 14px #fff;
+  margin-top: -5px;
+}
+.sign p {
+  margin: 0;
+  padding: 0;
+}
+
+.point {
+  color: #9badc5;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: -2%;
+  margin-bottom: 5%;
+}
+
+.mosikuha {
+  letter-spacing: 0.07em;
+  color: #202020;
+  margin-top: 14%;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  border-bottom: solid 2px #9badc5;
+  padding: 2px;
+  min-width: 80px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+.mosikuha:before,
+.mosikuha:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.mosikuha:before {
+  border: solid 12px transparent;
+  border-top: solid 12px #9badc5;
+}
+.mosikuha:after {
+  border: solid 14px transparent;
+  border-top: solid 14px #fff;
+  margin-top: -5px;
+}
+.mosikuha p {
+  margin: 0;
+  padding: 0;
+}
+.tosite {
+  margin-left: 0;
+  letter-spacing: 0.07em;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  padding-right: 35px;
+  padding-left: 35px;
+  color: #fff;
+  border-radius: 30px;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#fc999f),
+    to(#44c2eb)
+  );
+  background-image: -webkit-linear-gradient(right, #fc999f 0%, #44c2eb 100%);
+  background-image: linear-gradient(to left, #fc999f 0%, #44c2eb 100%);
+}
+.tositelogin {
+  font-size: 13px;
+}
+.contact {
+  margin-top: 20px;
+  color: #202020;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.kotira {
+  color: #44c2eb;
+}
+.adress {
+  margin-top: 8%;
+  font-size: 12px;
+  text-align: left;
+  color: #44c2eb;
+  margin-bottom: 5px;
+  margin-left: 5%;
+  font-weight: bold;
+}
+.pass {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 5%;
+  color: #44c2eb;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.password {
+  width: 60%;
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  outline-color: #fc999f;
+  border: 1px solid #2b3134;
+}
+.address {
+  width: 60%;
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  outline-color: #fc999f;
+  border: 1px solid #2b3134;
+}
+
+.eye {
+  position: absolute;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+}

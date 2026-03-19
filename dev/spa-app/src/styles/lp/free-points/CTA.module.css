@@ -1,0 +1,82 @@
+.cta {
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  text-align: center;
+  color: white;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton {
+  width: 300px;
+  height: 50px;
+  background: #ff4b5c;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 100px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scrollToTopButton {
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 20x;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .ctaButton {
+    font-size: 18px;
+  }
+}

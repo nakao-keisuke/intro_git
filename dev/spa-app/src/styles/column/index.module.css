@@ -1,0 +1,49 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  background-color: #f5f5f5;
+}
+
+.loginWrapper {
+  text-align: center;
+  padding: 1rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loginButton {
+  display: block;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  background-color: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: #0051cc;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 56px;
+  }
+
+  .loginButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

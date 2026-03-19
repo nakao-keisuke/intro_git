@@ -1,0 +1,130 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: rgb(70, 70, 70);
+  font-size: 14px;
+  width: 80%;
+  max-width: 400px;
+  overflow-y: scroll;
+  animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+  text-align: center;
+}
+.title {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #a3a3a3f5, #757577fb);
+  padding: 2px 5px;
+  color: #fff;
+  text-align: left;
+}
+.box {
+  border: 3px solid #dedede;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.13);
+}
+.button {
+  background-color: #2abbf4;
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.btn {
+  justify-content: space-between;
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.yes {
+  color: #2abbf4;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+}
+.no {
+  color: #2abbf4;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+}
+.cansel {
+  background-color: #868686;
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.check-section {
+  margin-bottom: 20px;
+}
+.check-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.check-result {
+  margin-top: 5px;
+}
+.audioLevelMeter {
+  width: 70%;
+  background-color: #ddd;
+  margin: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.audioLevelBar {
+  height: 20px;
+  background-color: #4caf50;
+  width: 0%;
+}
+.movie {
+  width: 65%;
+}
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+}
+.errorMsg {
+  font-size: 12px;
+  border: 2px solid #f8ad41;
+  border-radius: 2px;
+  color: #0c6ee5;
+  position: relative;
+  padding: 2px;
+  text-decoration: underline;
+  text-decoration-color: #0c6ee5;
+}

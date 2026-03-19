@@ -1,0 +1,236 @@
+.title {
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  background: white;
+  letter-spacing: 0.02em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  position: relative;
+}
+
+.pageWrap {
+  width: auto;
+  background: linear-gradient(#dfd5f4, #ceeffa);
+  font-size: 15px;
+  color: #595959;
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+/*テキスト*/
+.imageContainer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 6px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.img2 {
+  width: 90%;
+  height: auto;
+  filter: drop-shadow(1px 0 3px #ffffffa4);
+}
+
+.shadow {
+  color: #6a6969;
+  font-size: 25pt;
+  text-shadow: 10px 10px #fda2cfa9;
+  margin-bottom: 15px;
+}
+
+.under {
+  background: linear-gradient(transparent 40%, rgb(243, 255, 181) 50%);
+}
+
+.pageWrap {
+  position: relative;
+}
+
+.zoomIn {
+  padding: 0 10px;
+}
+
+@keyframes zoomInAnime {
+  from {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.imageVw {
+  width: 100%;
+  height: auto;
+}
+
+.box50,
+.box51 {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 40px 5px 5px 20px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  position: relative;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.box50 {
+  border: 2px solid #9032ef;
+}
+
+.box50::before {
+  background: linear-gradient(to right, #ffd480, #ef3275, #5010d2);
+  border-radius: 5px;
+  color: #fff;
+  content: "ビデオチャット";
+  padding: 5px 20px;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  font-weight: bold;
+  border: solid 2px #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.box50::after {
+  border-top: 12px solid #fa887e;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.box51 {
+  border: 2px solid #ef8daf;
+}
+
+.box51::before {
+  background: linear-gradient(to right, #e893a5, #ee2c55);
+  border-radius: 5px;
+  color: #fff;
+  content: "ビデオ通話";
+  padding: 5px 20px;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  font-weight: bold;
+  border: solid 2px #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.box51::after {
+  border-top: 12px solid #ef758f;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.loader {
+  margin: auto;
+  position: relative;
+  display: flex;
+  gap: 0.3em;
+  margin-bottom: 17px;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 2em;
+  filter: blur(85px);
+  background-color: #e299ff48;
+  background-image:
+    radial-gradient(at 52% 57%, hsla(11, 83%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 37% 57%, hsla(175, 78%, 66%, 1) 0px, transparent 50%);
+}
+
+.loaderCircle {
+  --size__loader: 0.6em;
+  margin: auto;
+  width: var(--size__loader);
+  height: var(--size__loader);
+  border-radius: 50%;
+  animation: loaderCircleJumping 2s infinite;
+  background-color: #b499ff;
+}
+
+.loaderCircle:nth-child(2n) {
+  animation-delay: 300ms;
+  background-color: #9de7ff;
+}
+
+.loaderCircle:nth-child(3n) {
+  animation-delay: 600ms;
+}
+
+@keyframes loaderCircleJumping {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(-15px) scale(0.5);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(5px) scale(0.9);
+  }
+}
+
+.highlight {
+  background: linear-gradient(transparent 60%, #fbf985 30%);
+  display: inline-block;
+  color: #202020;
+}
+
+.highlightText {
+  color: #f54076;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.note {
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.list {
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+}

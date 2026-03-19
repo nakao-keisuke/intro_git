@@ -1,0 +1,385 @@
+.content {
+  display: flex;
+}
+
+.var {
+  width: 15%;
+}
+
+.notvar {
+  width: 85%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-left: -20px;
+}
+
+.cell {
+  flex-shrink: 0;
+  margin-left: 0px;
+  margin-bottom: 0;
+  justify-content: center;
+  box-sizing: border-box;
+  list-style: none;
+  list-style-type: none;
+  position: relative;
+  margin-top: 20px;
+  background-color: #efefef;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.cell:hover {
+  opacity: 0.6;
+}
+
+.video_call_label {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  display: flex;
+  align-items: center; /* アイコンを中央揃えする */
+  padding: 4px 10px;
+  background: linear-gradient(to top, #e71740, #f82d55 40%);
+  color: #fff;
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 600;
+  height: 24px;
+  font-size: 12px;
+  line-height: 16px;
+  z-index: 2;
+  letter-spacing: 0.07em;
+  justify-content: center;
+  transform-origin: center;
+}
+
+.video_call_label:before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: -15px;
+  width: 5px;
+  height: 1px;
+  background-color: transparent;
+  border: 5px solid transparent;
+  border-left-color: #f82d55;
+  z-index: 1;
+}
+
+.live_label {
+  background: linear-gradient(to top, rgb(0, 141, 197), rgb(0, 171, 239) 40%);
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  display: flex;
+  align-items: center; /* アイコンを中央揃えする */
+  padding: 4px 10px;
+  color: #fff;
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 600;
+  height: 24px;
+  font-size: 12px;
+  line-height: 16px;
+  z-index: 2;
+  letter-spacing: 0.07em;
+  justify-content: center;
+  transform-origin: center;
+}
+
+.live_label:before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: -15px;
+  width: 5px;
+  height: 1px;
+  background-color: transparent;
+  border: 5px solid transparent;
+  border-left-color: rgb(0, 171, 239);
+  z-index: 1;
+}
+
+.sidewatch_label {
+  background: linear-gradient(to top, rgb(134, 17, 192), rgb(155, 43, 212) 40%);
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  display: flex;
+  align-items: center; /* アイコンを中央揃えする */
+  padding: 4px 10px;
+  color: #fff;
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 600;
+  height: 24px;
+  font-size: 12px;
+  line-height: 16px;
+  z-index: 2;
+  letter-spacing: 0.07em;
+  justify-content: center;
+  transform-origin: center;
+}
+.sidewatch_label:before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: -15px;
+  width: 5px;
+  height: 1px;
+  background-color: transparent;
+  border: 5px solid transparent;
+  border-left-color: rgb(155, 43, 212);
+  z-index: 1;
+}
+.thumbnail {
+  position: relative;
+}
+
+.beginnerIcon {
+  position: absolute;
+  top: -2px;
+  right: -1px;
+  width: 60px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.beginnerIcon span {
+  position: absolute;
+  padding: 3px 0;
+  left: -56px;
+  top: 14px;
+  width: 180px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 10px;
+  background: linear-gradient(
+    to right,
+    #21a852d5 30%,
+    #8bdfabd5 50%,
+    #21a852d5 70%
+  );
+  color: #fffff1;
+  border-bottom: 1px solid #f6e374;
+  border-top: 1px solid #f6e374;
+  letter-spacing: 0.07em;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.495);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.342);
+  z-index: 0;
+
+  overflow: hidden; /* 疑似要素がはみ出すことを防ぐために追加 */
+}
+
+.beginnerIcon span::before {
+  content: "";
+  position: absolute;
+  top: 0; /* リボンの上部から開始 */
+  left: -100%; /* この位置からアニメーションが開始されます */
+  height: 50%; /* リボンの上半分だけをカバーするようにします */
+  width: 200%; /* シャイニーエフェクトが完全に左から右に移動するのを確保するためにリボンの幅の2倍にします */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  ); /* シャイニーエフェクトの本体 */
+  transform: translateY(-50%) rotate(45deg); /* エフェクトをリボンの上半分に合わせるための位置調整 */
+  pointer-events: none; /* このエフェクトがクリックやタッチのジェスチャーを遮らないようにする */
+  animation: shine 1.5s infinite ease-in-out; /* シャイニーエフェクトをアニメーションさせる */
+}
+
+@keyframes shine {
+  from {
+    left: -100%; /* アニメーションの開始位置 */
+  }
+  to {
+    left: 100%; /* アニメーションの終了位置、完全に右側へ */
+  }
+}
+
+.mark {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.thumbnail {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.label img {
+  margin-right: 5px;
+}
+
+.containerFixedHeight {
+  height: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+
+.none {
+  width: 100%;
+  font-size: 12px;
+  display: block;
+  background-color: #fff;
+  color: rgb(154, 154, 154);
+  text-align: center;
+  min-height: 140px;
+  height: 140px;
+  margin-top: 5%;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  justify-content: center; /* 水平方向中央揃え */
+  align-items: center; /* 垂直方向中央揃え */
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #a3a3a3f5;
+  border-top-color: transparent;
+  animation: rot1 1.2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  width: 25px;
+  height: 25px;
+}
+
+@keyframes rot1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bottom {
+  bottom: 0;
+  display: block;
+  background-color: #00000068;
+}
+
+.username {
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap; /* 文字を折り返さないように指定 */
+  overflow: hidden; /* テキストがボックスに収まらない場合に非表示にする */
+  text-overflow: ellipsis; /* テキストがボックスに収まらない場合に...を追加する */
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 0 100px;
+  background-color: #00000068;
+  width: 100%;
+}
+
+.age {
+  margin-right: 3px;
+  font-size: 13px;
+  align-items: center;
+}
+
+.title {
+  padding: 7px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  background: white;
+  letter-spacing: 0.02em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  position: relative;
+}
+.imageContainer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 6px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.imageContainer:hover {
+  opacity: 0.6;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 7%;
+  margin-top: 5px;
+  margin-right: 8px;
+  padding: 0 px;
+  margin-bottom: 5px;
+  justify-content: flex-end;
+  border-bottom: 1px solid #b7b7b7;
+  padding-bottom: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.hatena {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #757577;
+  color: #757577;
+  border-radius: 20px;
+  font-size: 11px;
+  background-color: #fff;
+  margin-right: 10px;
+  padding: 2px 7px 2px 6px; /* Increase padding to provide a larger click target. */
+  width: auto;
+  box-sizing: border-box; /* Ensures that the padding is included in the element's total width and height. */
+
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.hatena:hover {
+  opacity: 0.6;
+}
+
+.genzai {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #202020cb;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 11px;
+  margin-right: 10px;
+  padding: 2px 7px 2px 6px; /* Increase padding to provide a larger click target. */
+  width: auto;
+  box-sizing: border-box; /* Ensures that the padding is included in the element's total width and height. */
+}
+.bold {
+  font-weight: bold;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 15px;
+  color: #ffffff;
+}

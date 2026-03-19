@@ -1,0 +1,143 @@
+.container {
+  padding-bottom: 5px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.148);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  height: 200px;
+}
+
+.title {
+  color: #424242;
+  padding: 12px 0;
+  margin-top: 0%;
+  margin-bottom: 0;
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.gridContainer {
+  display: flex;
+  overflow-x: auto;
+  padding: 0px 10px;
+  gap: 10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.gridContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.gridItem {
+  flex: 0 0 auto;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper:hover {
+  opacity: 0.8;
+}
+
+.thumbnailWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.beginnerIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  filter: drop-shadow(1px 1px 5px #ffffffed);
+}
+
+.userInfo {
+  padding: 5px;
+  width: 100%;
+}
+
+.userStatus {
+  display: flex;
+  align-items: center;
+}
+
+.onlineStatus {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.status-green {
+  background-color: rgb(105, 243, 105);
+}
+
+.status-orange {
+  background-color: rgb(255, 157, 0);
+}
+
+.status-grey {
+  background-color: rgb(73, 73, 73);
+}
+
+.userName {
+  font-size: 11px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userAbout {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 30px;
+}
+
+.none {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

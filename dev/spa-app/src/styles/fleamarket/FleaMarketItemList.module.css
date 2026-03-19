@@ -1,0 +1,362 @@
+.inlineContainer {
+  width: 100%;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* スクロール安定化 - 強化版 */
+  overflow-x: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  contain: layout style paint;
+  isolation: isolate;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 20px;
+}
+
+.errorMessage {
+  color: #ff4444;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.retryButton {
+  background-color: #fa63a7;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 13px;
+}
+
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* パフォーマンス最適化 */
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* 境界制御用のスタイル */
+  position: relative;
+  border-radius: 8px;
+}
+
+/* 左端境界視覚化 */
+.scrollContainer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 右端境界視覚化 */
+.scrollContainer::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* スクロール可能時の境界表示 */
+.scrollContainer:not(.atLeftBoundary)::before {
+  opacity: 1;
+}
+
+.scrollContainer:not(.atRightBoundary)::after {
+  opacity: 1;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.itemList {
+  display: flex;
+  gap: 12px;
+  padding: 3px 15px 10px;
+  min-width: min-content;
+  /* 横スクロール安定化 */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  contain: layout style;
+  /* 境界制御用のスタイル */
+  transition: transform 0.2s ease-out;
+}
+
+/* 境界状態を表示するクラス */
+.atLeftBoundary {
+  /* 左端での視覚的フィードバック */
+}
+
+.atRightBoundary {
+  /* 右端での視覚的フィードバック */
+}
+
+.atBothBoundaries {
+  /* 両端での視覚的フィードバック（アイテムが少ない場合） */
+}
+
+.inlineItemCard {
+  flex: 0 0 auto;
+  width: 140px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px #5151513c;
+  /* パフォーマンス最適化 */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+  will-change: auto;
+  transition: none;
+}
+
+.itemImageWrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background-color: #f5f5f5;
+  /* 画像描画最適化 */
+  transform: translate3d(0, 0, 0);
+  contain: layout style paint;
+  backface-visibility: hidden;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 画像描画最適化 */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  image-rendering: optimizeSpeed;
+  -webkit-image-rendering: optimizeSpeed;
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #999;
+  font-size: 11px;
+}
+
+.soldOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 70px 70px 0 0;
+  border-color: #ff4444 transparent transparent transparent;
+  z-index: 1;
+}
+
+.soldOverlay span {
+  position: absolute;
+  top: -60px;
+  left: 0px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transform: rotate(-45deg);
+  white-space: nowrap;
+}
+
+.favoriteCount {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 10px;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  z-index: 2;
+}
+
+.favoriteCount svg {
+  fill: #ff4d6d;
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: background-color 0.2s;
+}
+
+.favoriteButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.favoriteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.itemDetails {
+  padding: 10px;
+}
+
+.itemCategory {
+  font-size: 10px;
+  color: #999;
+  padding: 0;
+  margin: 0;
+}
+
+.itemTitle {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemPrice {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff4444;
+  margin: 0px;
+}
+
+.purchaseButton {
+  width: 100%;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 6px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.purchaseButton:hover {
+  background-color: #d56a9a;
+}
+
+.purchaseButton:active {
+  transform: scale(0.98);
+}
+
+.soldStatus {
+  width: 100%;
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 6px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  cursor: not-allowed;
+}
+
+.loadMoreCard {
+  flex: 0 0 auto;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loadMoreButton {
+  background-color: white;
+  color: #e67ead;
+  border: 2px solid #e67ead;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.loadMoreButton:hover {
+  background-color: #e67ead;
+  color: white;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #e67ead;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

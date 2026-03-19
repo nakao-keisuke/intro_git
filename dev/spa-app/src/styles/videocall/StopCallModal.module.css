@@ -1,0 +1,73 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(39, 39, 39, 0.5);
+  z-index: 99999999;
+}
+
+.modal {
+  position: relative;
+  width: auto;
+  padding: 1em;
+  background: #fff;
+  border-radius: 10px;
+  color: #2b3134;
+  animation: popup 0.3s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+  z-index: 500;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.cansel {
+  border: none;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+  margin: auto;
+  padding: 12px 10px;
+  border-radius: 100vh;
+  background: #fff;
+  color: #2b3134;
+  margin-top: 8px;
+}
+
+.end {
+  border: none;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+  margin: auto;
+  padding: 12px 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  background: #ff5a5a;
+  color: #fff;
+  margin-top: 8px;
+}
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+}

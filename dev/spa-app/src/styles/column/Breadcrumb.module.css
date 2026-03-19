@@ -1,0 +1,66 @@
+.breadcrumb {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  min-width: 0; /* flexboxでの省略に必要 */
+}
+
+.item:first-child {
+  flex-shrink: 0; /* "コラム一覧"は省略しない */
+}
+
+.item:last-child {
+  flex: 1;
+  min-width: 0; /* flexboxでの省略に必要 */
+}
+
+.item a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.item a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.current {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0; /* flexboxでの省略に必要 */
+}
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 0.75rem 0;
+  }
+
+  .item {
+    font-size: 0.8125rem;
+  }
+}
