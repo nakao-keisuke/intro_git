@@ -1,0 +1,4 @@
+font-size = 16
+
+keybind = super+i=scroll_page_lines:-3
+keybind = super+m=scroll_page_lines:3
