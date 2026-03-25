@@ -1,0 +1,19 @@
+[[manager.prepend_keymap]]
+on   = [ "<Esc>" ]
+run  = ["escape", "filter"]
+desc = "Clear search and filter"
+
+[[manager.prepend_keymap]]
+on   = [ "s" ]
+run  = "search fd"
+desc = "Search files by name (fd)"
+
+[[manager.prepend_keymap]]
+on   = [ "S" ]
+run  = "search rg"
+desc = "Search files by content (rg)"
+
+[[input.prepend_keymap]]
+on   = [ "<Esc>" ]
+run  = ["escape", "close"]
+desc = "Cancel input and return"
