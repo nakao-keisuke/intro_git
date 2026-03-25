@@ -5,10 +5,8 @@ vim.opt.termguicolors = true
 -- キーマップの例（最低限）
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", ":w<CR>")
-vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>q", ":q!<CR>")
 vim.keymap.set("n", "<leader>s", ":wq<CR>")
-vim.keymap.set("n", "<leader>qf", ":q!<CR>")
-
 -- 移動キーを jmik に変更
 local modes = { "n", "v", "o" }
 for _, mode in ipairs(modes) do
