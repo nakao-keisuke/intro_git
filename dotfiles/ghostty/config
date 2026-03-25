@@ -1,4 +1,8 @@
 font-size = 16
 
-keybind = super+i=scroll_page_lines:-3
-keybind = super+m=scroll_page_lines:3
+keybind = super+i=scroll_page_lines:-5
+keybind = super+m=scroll_page_lines:5
+
+# ANSI Green → Blue
+palette = 2=#3399FF
+palette = 10=#3399FF

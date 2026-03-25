@@ -24,7 +24,7 @@ return {
         local map = function(key, fn, desc)
           vim.keymap.set("n", key, fn, { buffer = buf, desc = desc })
         end
-        map("gd", vim.lsp.buf.definition, "定義へジャンプ")
+        map("<leader>d", vim.lsp.buf.definition, "定義へジャンプ")
         map("gr", vim.lsp.buf.references, "参照一覧")
         map("K", vim.lsp.buf.hover, "ホバー情報")
         map("<leader>ca", vim.lsp.buf.code_action, "コードアクション")
