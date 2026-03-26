@@ -24,6 +24,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # aliases
 alias d=z
 

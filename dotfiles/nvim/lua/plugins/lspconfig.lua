@@ -4,9 +4,6 @@ return {
   config = function()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- 使いたい言語サーバーをここに追加
-    -- 例: vim.lsp.config("ts_ls", { capabilities = capabilities })
-    -- 例: vim.lsp.config("pyright", { capabilities = capabilities })
     vim.lsp.config("lua_ls", {
       capabilities = capabilities,
       settings = {
@@ -16,6 +13,11 @@ return {
       },
     })
     vim.lsp.enable("lua_ls")
+
+    vim.lsp.config("vtsls", {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable("vtsls")
 
     -- キーマップ
     vim.api.nvim_create_autocmd("LspAttach", {
