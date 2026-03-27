@@ -27,8 +27,16 @@ eval "$(zoxide init zsh)"
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# uv tools
+export PATH="$HOME/.local/bin:$PATH"
+
 # aliases
 alias d=z
+alias ls="eza --icons --git"
+alias ll="eza -l --icons --git"
+alias la="eza -la --icons --git"
+alias tree="eza --tree --icons"
+alias rg="rg --smart-case"
 
 # karabiner neovim_mode wrapper
 _karabiner_cli="/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
@@ -50,5 +58,12 @@ function yazi() {
 function lazygit() {
   "$_karabiner_cli" --set-variables '{"neovim_mode": 1}'
   command lazygit "$@"
+  "$_karabiner_cli" --set-variables '{"neovim_mode": 0}'
+}
+
+# vi-mongo (karabiner)
+function vi-mongo() {
+  "$_karabiner_cli" --set-variables '{"neovim_mode": 1}'
+  command vi-mongo "$@"
   "$_karabiner_cli" --set-variables '{"neovim_mode": 0}'
 }
