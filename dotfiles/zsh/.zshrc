@@ -1,21 +1,3 @@
-# Java
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
-
-# Homebrew (Apple Silicon / M1〜M4)
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-
-# Added by Antigravity
-export PATH="/Users/nakaokeisuke/.antigravity/antigravity/bin:$PATH"
-
-# Android Studio
-export ANDROID_HOME=$HOME/Library/Android/sdk                                
-export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH 
 
 # zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -61,9 +43,20 @@ function lazygit() {
   "$_karabiner_cli" --set-variables '{"neovim_mode": 0}'
 }
 
+# lazysql (karabiner)
+function lazysql() {
+  "$_karabiner_cli" --set-variables '{"neovim_mode": 1}'
+  command lazysql "$@"
+  "$_karabiner_cli" --set-variables '{"neovim_mode": 0}'
+}
+
 # vi-mongo (karabiner)
 function vi-mongo() {
   "$_karabiner_cli" --set-variables '{"neovim_mode": 1}'
   command vi-mongo "$@"
   "$_karabiner_cli" --set-variables '{"neovim_mode": 0}'
 }
+
+export PATH="$HOME/go/bin:$PATH"
+
+export DOCKER_HOST=unix:///Users/kn/.colima/default/docker.sock

@@ -28,6 +28,7 @@ package main
 
         e.GET("/users", getUsers)
         e.GET("/users/:id", getUserByID)
+        e.POST("/users", createUser)
 
         e.Logger.Fatal(e.Start(":8080"))
   }
@@ -49,6 +50,23 @@ package main
         }
 
         return c.JSON(http.StatusOK, users)
+  }
+
+  func createUser(c echo.Context) error {
+        var u User
+        if err := c.Bind(&u); err != nil {
+                return c.JSON(http.StatusBadRequest, map[string]string{"error": "invalid request body"})
+        }
+
+        result, err := db.Exec("INSERT INTO users (name, email) VALUES (?, ?)", u.Name, u.Email)
+        if err != nil {
+                return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
+        }
+
+        id, _ := result.LastInsertId()
+        u.ID = int(id)
+
+        return c.JSON(http.StatusCreated, u)
   }
 
   func getUserByID(c echo.Context) error {
