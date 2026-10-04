@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/kn/**)",
+      "Read(//Users/kn/.local/share/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(/opt/homebrew/bin/nodebrew list:*)"
+    ]
+  }
+}

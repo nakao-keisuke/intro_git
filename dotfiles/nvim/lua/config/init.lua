@@ -28,6 +28,9 @@ vim.keymap.set("n", "H", "^", { noremap = true })     -- 非空白行頭
 vim.keymap.set("n", "^", "H", { noremap = true })     -- 画面上端
 vim.keymap.set("n", "$", ";", { noremap = true })      -- f/t 繰り返し
 
+-- 大西配列(Karabiner の Challenge プロファイル)のときだけ、上記の操作を物理キー位置のまま使えるようにする
+require("config.oonishi").setup()
+
 -- プラグインマネージャ lazy.nvim のセットアップ
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

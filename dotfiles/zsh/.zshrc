@@ -4,6 +4,8 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fzf
 source <(fzf --zsh)
+autoload -Uz compinit && compinit
+source "/opt/homebrew/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
 eval "$(zoxide init zsh)"
 
 # cargo
@@ -57,6 +59,16 @@ function vi-mongo() {
   "$_karabiner_cli" --set-variables '{"neovim_mode": 0}'
 }
 
+# nodebrew
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
 export PATH="$HOME/go/bin:$PATH"
 
 export DOCKER_HOST=unix:///Users/kn/.colima/default/docker.sock
+
+eval "$(starship init zsh)"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/kn/.antigravity-ide/antigravity-ide/bin:$PATH"
